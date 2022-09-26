@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public TextMeshProUGUI killCounter;
+    public Slider killSlider;
     private ArrayList _enemyList = new ArrayList();
 
     private int _kills = 0;
@@ -22,7 +23,7 @@ public class ScoreCounter : MonoBehaviour
     private void IncrementKillCounter()
     {
         _kills += 1;
-        killCounter.text = "Kills: " + _kills;
+        killSlider.value = _kills;
     }
     
     public void AddEnemy(GameObject currEnemy)

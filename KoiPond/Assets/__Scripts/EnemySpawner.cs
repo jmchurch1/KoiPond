@@ -9,6 +9,18 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemy;
 
+    public List<Transform> spawnPositionList = new List<Transform>();
+    /*
+     *  0: bottom1
+     *  1: bottom2
+     *  2: top1
+     *  3: top2
+     *  4: left1
+     *  5: left2
+     *  6: right1
+     *  7: right2
+     */
+    
     private GameObject _player;
     private Camera _mainCamera;
     
@@ -44,24 +56,54 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        // get positions outside height and width of viewport
-        float x = _mainCamera.orthographicSize + 5;
-        float y = _mainCamera.orthographicSize * _mainCamera.aspect + 5;
-        
-        // randomize side
-        if (Random.value >= 0.5f)
-            x *= -1;
-        if (Random.value >= 0.5f)
-            y *= -1;
-        
-        for (int i = 0; i < _enemyAmount; i++)
+        int side = Random.Range(0, 4);
+
+        switch (side)
         {
-            float randOffset1 = Random.Range(-2, 2);
-            float randOffset2 = Random.Range(-2, 2);
-            GameObject currEnemy = Instantiate(enemy, _viewportPos + new Vector3(x + randOffset1, y + randOffset2, 0f), Quaternion.identity);
+            case 0:
+                for (int i = 0; i < _enemyAmount; i++)
+                {
+                    float xPosition = Random.Range(spawnPositionList[0].position.x, spawnPositionList[1].position.x);
+                    float yPosition = spawnPositionList[0].position.y;
+                    GameObject currEnemy = Instantiate(enemy, _viewportPos + new Vector3(xPosition, yPosition, 0f), Quaternion.identity);
             
-            // add enemy to list of enemies
-            ScoreCounter.ScoreInstance.AddEnemy(currEnemy);
+                    // add enemy to list of enemies
+                    ScoreCounter.ScoreInstance.AddEnemy(currEnemy);
+                }
+                break;
+            case 1:
+                for (int i = 0; i < _enemyAmount; i++)
+                {
+                    float xPosition = Random.Range(spawnPositionList[2].position.x, spawnPositionList[3].position.x);
+                    float yPosition = spawnPositionList[2].position.y;
+                    GameObject currEnemy = Instantiate(enemy, _viewportPos + new Vector3(xPosition, yPosition, 0f), Quaternion.identity);
+            
+                    // add enemy to list of enemies
+                    ScoreCounter.ScoreInstance.AddEnemy(currEnemy);
+                }
+                break;
+            case 2:
+                for (int i = 0; i < _enemyAmount; i++)
+                {
+                    float xPosition = spawnPositionList[4].position.x;
+                    float yPosition = Random.Range(spawnPositionList[4].position.y, spawnPositionList[5].position.y);
+                    GameObject currEnemy = Instantiate(enemy, _viewportPos + new Vector3(xPosition, yPosition, 0f), Quaternion.identity);
+            
+                    // add enemy to list of enemies
+                    ScoreCounter.ScoreInstance.AddEnemy(currEnemy);
+                }
+                break;
+            case 3:
+                for (int i = 0; i < _enemyAmount; i++)
+                {
+                    float xPosition = spawnPositionList[4].position.x;
+                    float yPosition = Random.Range(spawnPositionList[4].position.y, spawnPositionList[5].position.y);
+                    GameObject currEnemy = Instantiate(enemy, _viewportPos + new Vector3(xPosition, yPosition, 0f), Quaternion.identity);
+            
+                    // add enemy to list of enemies
+                    ScoreCounter.ScoreInstance.AddEnemy(currEnemy);
+                }
+                break;
         }
     }
 }

@@ -12,7 +12,7 @@ public class ProjectileHit : MonoBehaviour
         {
             // remove health from enemy
             
-            // other.gameObject.GetComponent<Enemy>().DecrementHealth(_bulletDamage);
+            other.gameObject.GetComponent<Enemy>().DecrementHealth(_bulletDamage);
             
             // destroy bullet
             Destroy(gameObject);
