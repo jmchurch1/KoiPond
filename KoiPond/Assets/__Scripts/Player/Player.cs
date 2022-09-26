@@ -12,12 +12,14 @@ public class Player : MonoBehaviour
 
     public Transform muzzle;
 
+    public List<Sprite> assassinSprites = new List<Sprite>();
     public List<Sprite> wizardSprites = new List<Sprite>();
     /*
      *  index 0: facing down
      *  index 1: facing up
      *  index 2: facing side
      */
+    
     //public AudioSource bulletSound;
     
     //https://www.youtube.com/watch?v=whzomFgjT50
@@ -74,7 +76,7 @@ public class Player : MonoBehaviour
 
                 break;
             case 1:
-
+                _spriteRenderer.sprite = assassinSprites[0];
                 break;
             case 2:
 
