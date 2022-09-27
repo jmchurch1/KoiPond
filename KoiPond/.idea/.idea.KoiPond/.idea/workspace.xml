@@ -5,7 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KoiPond/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KoiPond/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/__Scripts/ScoreCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/ScoreCounter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +27,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/Enemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/__Scripts/Projectiles/ProjectileHit.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/CharacterSpawnIn.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2FHLaqGnHNQwTaIAsAqQ4AcjDgQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -74,6 +73,7 @@
       <updated>1664144132308</updated>
       <workItem from="1664144140523" duration="7008000" />
       <workItem from="1664222014349" duration="1290000" />
+      <workItem from="1664242937781" duration="2613000" />
     </task>
     <servers />
   </component>

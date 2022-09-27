@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private Vector2 _movement;
 
     private int _currCharacter = 0;
+    private int _selectedCharacter = 1;
+    private int _numCharacters = 4;
     
     
 
@@ -42,6 +44,8 @@ public class Player : MonoBehaviour
     {
         _rb = gameObject.GetComponent<Rigidbody2D>();
         _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        ScoreCounter.ScoreInstance.PlayCharacter(_currCharacter);
+        ScoreCounter.ScoreInstance.SetSelectedCharacter(_selectedCharacter);
     }
 
     // Update is called once per frame
@@ -85,10 +89,7 @@ public class Player : MonoBehaviour
 
                 break;
         }
-        if (Math.Abs(_movement.x) > Math.Abs(_movement.y))
-        {
-            
-        }
+        
         
         
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -98,6 +99,29 @@ public class Player : MonoBehaviour
         {
             if (!_waitingShot)
                 StartCoroutine("Shoot", ray);
+        }
+
+        if (ScoreCounter.ScoreInstance.GetSwitchAvailable())
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ScoreCounter.ScoreInstance.DeselectCharacter(_currCharacter);
+                ScoreCounter.ScoreInstance.PlayCharacter(_selectedCharacter);
+                _currCharacter = _selectedCharacter;
+                _selectedCharacter = (_selectedCharacter + 1) % _numCharacters;
+                ScoreCounter.ScoreInstance.SetSelectedCharacter(_selectedCharacter);
+                ScoreCounter.ScoreInstance.SetSwitchAvailable(false);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ScoreCounter.ScoreInstance.DeselectCharacter(_selectedCharacter);
+            _selectedCharacter = (_selectedCharacter + 1) % _numCharacters;
+            // make sure player doesn't select current character
+            if (_selectedCharacter == _currCharacter) _selectedCharacter = (_selectedCharacter + 1) % _numCharacters;
+            Debug.Log(_selectedCharacter);
+            ScoreCounter.ScoreInstance.SetSelectedCharacter(_selectedCharacter);
         }
     }
 
