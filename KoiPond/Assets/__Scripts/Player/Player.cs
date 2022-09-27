@@ -11,7 +11,10 @@ public class Player : MonoBehaviour
     public GameObject bullet;
 
     public Transform muzzle;
-
+    public GameObject explosion;
+    
+    public List<Sprite> rangerSprite = new List<Sprite>();
+    public List<Sprite> druidSprite = new List<Sprite>();
     public List<Sprite> assassinSprites = new List<Sprite>();
     public List<Sprite> wizardSprites = new List<Sprite>();
     /*
@@ -83,10 +86,10 @@ public class Player : MonoBehaviour
                 _spriteRenderer.sprite = assassinSprites[0];
                 break;
             case 2:
-
+                _spriteRenderer.sprite = druidSprite[0];
                 break;
             case 3:
-
+                _spriteRenderer.sprite = rangerSprite[0];
                 break;
         }
         
@@ -105,12 +108,8 @@ public class Player : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                ScoreCounter.ScoreInstance.DeselectCharacter(_currCharacter);
-                ScoreCounter.ScoreInstance.PlayCharacter(_selectedCharacter);
-                _currCharacter = _selectedCharacter;
-                _selectedCharacter = (_selectedCharacter + 1) % _numCharacters;
-                ScoreCounter.ScoreInstance.SetSelectedCharacter(_selectedCharacter);
-                ScoreCounter.ScoreInstance.SetSwitchAvailable(false);
+                Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+                StartCoroutine(nameof(Switch));
             }
         }
 
@@ -154,5 +153,18 @@ public class Player : MonoBehaviour
         currBullet.GetComponent<Rigidbody2D>().AddForce(dir * _bulletForce);
         // reset waiting shot bool
         _waitingShot = false;
+    }
+
+    IEnumerator Switch()
+    {
+        yield return new WaitForSeconds(.1f);
+        ScoreCounter.ScoreInstance.RemoveAllEnemies();
+        yield return new WaitForSeconds(.5f);
+        ScoreCounter.ScoreInstance.DeselectCharacter(_currCharacter);
+        ScoreCounter.ScoreInstance.PlayCharacter(_selectedCharacter);
+        _currCharacter = _selectedCharacter;
+        _selectedCharacter = (_selectedCharacter + 1) % _numCharacters;
+        ScoreCounter.ScoreInstance.SetSelectedCharacter(_selectedCharacter);
+        ScoreCounter.ScoreInstance.SetSwitchAvailable(false);
     }
 }

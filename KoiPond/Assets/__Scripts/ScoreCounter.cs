@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class ScoreCounter : MonoBehaviour
 {
     public Slider killSlider;
-    private ArrayList _enemyList = new ArrayList();
+    private List<GameObject> _enemyList = new List<GameObject>();
 
     public List<Image> _characterList = new List<Image>();
     
@@ -69,6 +69,15 @@ public class ScoreCounter : MonoBehaviour
     {
         Debug.Log(_characterList[selectedCharacter].name);
         _characterList[selectedCharacter].color = Color.red;
+    }
+
+    public void RemoveAllEnemies()
+    {
+        for (int i = _enemyList.Count - 1; i >= 0; i--)
+        {
+            Destroy(_enemyList[i]);
+            RemoveEnemy(_enemyList[i]);
+        }
     }
     
     

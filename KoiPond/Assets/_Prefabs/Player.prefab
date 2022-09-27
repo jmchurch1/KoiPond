@@ -170,9 +170,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2004793233800736275, guid: 2203b1f65709311449601c11d90c2728, type: 3}
   muzzle: {fileID: 6654568581273071097}
+  explosion: {fileID: 7346698644807760779, guid: 71c0175090176d54e943477cb255eb04, type: 3}
+  rangerSprite:
+  - {fileID: 21300000, guid: 3aedf11ebb680294595f6eecf8c36ff5, type: 3}
+  druidSprite:
+  - {fileID: 21300000, guid: 363dd628cd09c8c4eb56bdb4549078a3, type: 3}
+  assassinSprites:
+  - {fileID: 21300000, guid: 7babf882458415247949578d355991c3, type: 3}
   wizardSprites:
-  - {fileID: 21300000, guid: a1e511d46ec264f44abcf388bf900922, type: 3}
-  - {fileID: 21300000, guid: cdc3a7f2ac0485b44b5ef0948167dfca, type: 3}
-  - {fileID: 21300000, guid: 0478228b0eaf8014f886b34a540b8611, type: 3}
+  - {fileID: 21300000, guid: bb42b9fff42feff4d88ec72f39d23dbb, type: 3}
+  - {fileID: 21300000, guid: 5e24eacdee4fb2446b3a32f6eb24f269, type: 3}
+  - {fileID: 21300000, guid: d85fa7275bc263a489805ed8e06ad22b, type: 3}
   moveSpeed: 10
   _shotWaitTime: 0.5

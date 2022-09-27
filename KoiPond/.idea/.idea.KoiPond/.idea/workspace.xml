@@ -4,6 +4,8 @@
     <list default="true" id="b43e2eac-c4e1-4875-8c01-c9384399a521" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KoiPond/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KoiPond/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Explosion.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Explosion.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/__Scripts/ScoreCounter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/__Scripts/ScoreCounter.cs" afterDir="false" />
     </list>
@@ -73,7 +75,7 @@
       <updated>1664144132308</updated>
       <workItem from="1664144140523" duration="7008000" />
       <workItem from="1664222014349" duration="1290000" />
-      <workItem from="1664242937781" duration="2613000" />
+      <workItem from="1664242937781" duration="4448000" />
     </task>
     <servers />
   </component>

@@ -2679,18 +2679,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6654568581410063865, guid: 58a1f45c8212aa94ca19258c21dda716, type: 3}
-      propertyPath: wizardSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: bb42b9fff42feff4d88ec72f39d23dbb, type: 3}
-    - target: {fileID: 6654568581410063865, guid: 58a1f45c8212aa94ca19258c21dda716, type: 3}
-      propertyPath: wizardSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5e24eacdee4fb2446b3a32f6eb24f269, type: 3}
-    - target: {fileID: 6654568581410063865, guid: 58a1f45c8212aa94ca19258c21dda716, type: 3}
-      propertyPath: wizardSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: d85fa7275bc263a489805ed8e06ad22b, type: 3}
     - target: {fileID: 6654568581410063869, guid: 58a1f45c8212aa94ca19258c21dda716, type: 3}
       propertyPath: m_RootOrder
       value: 2
